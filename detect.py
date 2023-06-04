@@ -9,7 +9,7 @@ x=list(range(1,220161))
 audio_file = 'output.wav'
 y_init, sr_init = librosa.load(audio_file)
 print("sr is ",sr_init)
-print("y is",y_init)
+#print("y is",y_init)
 # Plot waveform of amplitude vs time
 #plt.figure(figsize=(14, 5))
 fig, ax = plt.subplots(nrows=3, sharex=True)
