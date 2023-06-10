@@ -1,0 +1,70 @@
+{
+    "deviceId": "SN0001",
+    "deviceType": "standalone",
+    "timeStamp": "10-06-2023T15-02-34",
+    "recTimeStamp": "2023-06-10T14-37-00.wav",
+    "recFileName": "rec_2023-06-10T14-37-00.wav",
+    "gpsLat": "11.5N",
+    "gpsLong": "88.4E",
+    "recDuration": "20",
+    "recSamplingRate": "48000",
+    "recFormat": "wav",
+    "detectionCount": 3,
+    "onsetThreshold": 0.05,
+    "peakTimeStamp": [
+        "4.597551020408163",
+        "4.899410430839002",
+        "5.2477097505668935"
+    ],
+    "peakMagnitude": [
+        "0.22184145",
+        "0.29972252",
+        "0.11656624"
+    ]
+}{
+    "deviceId": "SN0001",
+    "deviceType": "standalone",
+    "timeStamp": "10-06-2023T15-02-35",
+    "recTimeStamp": "2023-06-10T15-37-00.wav",
+    "recFileName": "rec_2023-06-10T15-37-00.wav",
+    "gpsLat": "11.5N",
+    "gpsLong": "88.4E",
+    "recDuration": "20",
+    "recSamplingRate": "48000",
+    "recFormat": "wav",
+    "detectionCount": 3,
+    "onsetThreshold": 0.05,
+    "peakTimeStamp": [
+        "4.597551020408163",
+        "4.899410430839002",
+        "5.2477097505668935"
+    ],
+    "peakMagnitude": [
+        "0.22184145",
+        "0.29972252",
+        "0.11656624"
+    ]
+}{
+    "deviceId": "SN0001",
+    "deviceType": "standalone",
+    "timeStamp": "10-06-2023T15-02-35",
+    "recTimeStamp": "2023-07-10T18-37-00.wav",
+    "recFileName": "rec_2023-07-10T18-37-00.wav",
+    "gpsLat": "11.5N",
+    "gpsLong": "88.4E",
+    "recDuration": "20",
+    "recSamplingRate": "48000",
+    "recFormat": "wav",
+    "detectionCount": 3,
+    "onsetThreshold": 0.05,
+    "peakTimeStamp": [
+        "4.597551020408163",
+        "4.899410430839002",
+        "5.2477097505668935"
+    ],
+    "peakMagnitude": [
+        "0.22184145",
+        "0.29972252",
+        "0.11656624"
+    ]
+}

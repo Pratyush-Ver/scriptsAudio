@@ -13,6 +13,7 @@ print("sr is ",sr_init)
 # Plot waveform of amplitude vs time
 #plt.figure(figsize=(14, 5))
 fig, ax = plt.subplots(nrows=3, sharex=True)
+
 librosa.display.waveshow(y_init, sr=sr_init, ax=ax[0])
 ax[0].set(title='Envelope view, mono')
 ax[0].label_outer()

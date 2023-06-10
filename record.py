@@ -8,7 +8,7 @@ channels = 2
 fs = 48000  # Record at 44100 samples per second
 seconds = 20
 
-filename = "output.wav"
+filename = "rec_2023-06-10T14-37-00.wav"
 
 p = pyaudio.PyAudio()  # Create an interface to PortAudio
 

@@ -1,0 +1,20 @@
+{
+    "deviceId": "SN0001",
+    "deviceType": "standalone",
+    "timeStamp": "dd/mm/yyyy_hh:mm:ss",
+    "recTimeStamp": "dd/mm/yyyy_hh:mm:ss",
+    "recFileName": "xyz.wav",
+    "gpsLat": "11.5N",
+    "gpsLong": "88.4E",
+    "recDuration": "10",
+    "recSamplingRate": "48000",
+    "recFormat": "wav",
+    "detectionCount": "11",
+    "onsetThreshold": "0.01",
+    "peakTimeStamp": [
+        "timeStamp1"
+    ],
+    "peakMagnitude": [
+        "magnitude1"
+    ]
+}
