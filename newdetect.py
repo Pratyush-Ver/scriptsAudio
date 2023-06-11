@@ -8,6 +8,7 @@ import os
 import time
  
 path = "C://Users//praty//Desktop//work//scriptsAudio//rec" 
+path2 = "C:/Users/praty/Desktop/work/scriptsAudio/rec/"
 
 # Data to be written
 payload = {
@@ -51,7 +52,7 @@ def json_write(payload):
 def filecheck():
     dir_list = os.listdir(path)
     print("Files and directories in '", path, "' :")
-    #print(dir_list)
+    print(dir_list)
     if len(dir_list)==0:
         return False, dir_list
     else:
@@ -81,8 +82,8 @@ while 1:
         for file in dir_list:
             # Load audio file
             audio_file = file
-            y_init, sr_init = librosa.load(audio_file)
-            print("Files found! sr is ",sr_init)
+            y_init, sr_init = librosa.load(path2+audio_file)
+            print("File found! path is ",path2+file," sr is ",sr_init)
             #print("y is",y_init)
             # Plot waveform of amplitude vs time
             #plt.figure(figsize=(14, 5))
@@ -114,4 +115,5 @@ while 1:
             print("detected time are",onset_detects)
             print("detected values are",onset_detects_values)
             build_payload(onset_detects,onset_detects_values,file)
+            os.remove(path2+audio_file)
         
