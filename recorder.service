@@ -1,0 +1,23 @@
+[Unit]
+
+# Human readable name of the unit
+Description=Recorder Application
+#StartLimitBurst=3
+#StartLimitIntervalSec=30
+
+[Service]
+
+#Command to execute when the service is started
+ExecStart=/home/raspberry/recorder.sh
+StandardOutput=file:/var/tmp/recorder.log
+StandardError=inherit
+#WatchdogSec=150s
+# Automatically restart the service if it crashes
+#ExecStop=/usr/sbin/rana/remove.sh
+Restart=on-failure
+
+[Install]
+
+# Tell systemd to automatically start this service when the system boots
+# (assuming the service is enabled)
+WantedBy=multi-user.target

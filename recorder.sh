@@ -1,10 +1,10 @@
 #!/bin/sh
-#!/bin/sh
+
 card=`arecord -l | grep card | awk '{print $2}' | sed 's/://g'`
 device=`arecord -l | grep card | awk '{print $8}' | sed 's/://g'`
 echo "$card"
 echo "$device"
-duration=10
+duration=20
 mic=0
 stamp() {
     TEXT="rec"
@@ -34,6 +34,6 @@ while [ $mic -eq 1 ]
 do
     miccheck
     filename=`stamp`
-    arecord -D hw:$card,$device -d $duration -f S16_LE -r 48000 -t wav -c 1 $filename.wav
+    arecord -D hw:$card,$device -d $duration -f S16_LE -r 48000 -t wav -c 1 /home/raspberry/rec/$filename.wav
     sleep 0.5
 done

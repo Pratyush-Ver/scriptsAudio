@@ -6,9 +6,10 @@ import json
 from datetime import datetime
 import os
 import time
+from ipcqueue import posixmq
  
-path = "C://Users//praty//Desktop//work//scriptsAudio//rec" 
-path2 = "C:/Users/praty/Desktop/work/scriptsAudio/rec/"
+path = "/home/raspberry/rec" 
+path2 = "/home/raspberry/rec/"
 
 # Data to be written
 payload = {
@@ -28,6 +29,15 @@ payload = {
 "peakMagnitude":[]
 }
 
+q_payload = {
+"recFileName":"",
+"detectionCount":"",
+"peakTimeStamp":[],
+"peakMagnitude":[]
+}
+
+q = posixmq.Queue('/detect') #ipc queue for detection payload
+
 def build_payload(onset_detects,onset_detects_values,filename):
     now = datetime.now()
     dt_string = now.strftime("%d-%m-%YT%H-%M-%S")
@@ -42,11 +52,16 @@ def build_payload(onset_detects,onset_detects_values,filename):
     payload["peakTimeStamp"]=onset_detects
     payload["peakMagnitude"]=onset_detects_values
     json_write(payload)
+    q_payload["recFileName"]=filename
+    q_payload["detectionCount"]=len(onset_detects)
+    q_payload["peakTimeStamp"]=onset_detects
+    q_payload["peakMagnitude"]=onset_detects_values
+    q.put(q_payload)
 
 # Writing to sample.json
 def json_write(payload):
     json_object = json.dumps(payload, indent=4)
-    with open("detections.json", "a") as outfile:
+    with open("/home/raspberry/detections.json", "a") as outfile:
         outfile.write(json_object)
 
 def filecheck():
@@ -115,5 +130,5 @@ while 1:
             print("detected time are",onset_detects)
             print("detected values are",onset_detects_values)
             build_payload(onset_detects,onset_detects_values,file)
-            os.remove(path2+audio_file)
+            #os.remove(path2+audio_file)
         
